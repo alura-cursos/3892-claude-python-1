@@ -17,7 +17,7 @@ def identificador_de_perfil():
 
     cliente - perfil do cliente em 3 palavras.
     """
-    prompt_do_usuario = carrega('./dados/lista_de_consumo_100_clientes.csv')
+    prompt_do_usuario = carrega('./dados/lista_de_consumo/lista_de_consumo_100_clientes.csv')
 
     mensagem = cliente.messages.create(
         model=modelo,
