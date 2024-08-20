@@ -27,25 +27,37 @@ def analisador_de_sentimentos(restaurante):
     """
     prompt_do_usuario = carrega(f'./dados/avaliacoes/avaliacoes-{restaurante}.txt')
     print(f'Iniciou a análise do {restaurante}')
-    mensagem = cliente.messages.create(
-        model=modelo,
-        max_tokens=2000,
-        temperature=0,
-        system=prompt_do_sistema,
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": prompt_do_usuario
-                    }
-                ]
-            }
-        ]
-    )
-    resposta = mensagem.content[0].text
-    salva(f'./dados/avaliacoes/analise-{restaurante}.txt',resposta)
-    print(f'Finalizou a análise do {restaurante}')
+    try:
+        mensagem = cliente.messages.create(
+            model=modelo,
+            max_tokens=2000,
+            temperature=0,
+            system=prompt_do_sistema,
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": prompt_do_usuario
+                        }
+                    ]
+                }
+            ]
+        )
+        resposta = mensagem.content[0].text
+        salva(f'./dados/avaliacoes/analise-{restaurante}.txt',resposta)
+        print(f'Finalizou a análise do {restaurante}')
+    except anthropic.APIConnectionError as e:
+        print("O servidor não pode ser acessado! Erro:", e.__cause__)
+    except anthropic.RateLimitError as e:
+        print("Um status code 429 foi recebido! Limite de acesso foi atingido.")
+    except anthropic.APIStatusError as e:
+        print(f"Um erro {e.status_code} foi recebido. Mais informações: {e.response}")
+    except Exception as e:
+        print(f"Um erro insperado ocorreu: {e}")
 
-analisador_de_sentimentos('Restaurante de Comida Chinesa')
+lista_de_restaurantes = ['Restaurante de Comida Vegana', 'Restaurante de Comida Chinesa','Restaurante de Bolos e Doces']
+
+for restaurante in lista_de_restaurantes:
+    analisador_de_sentimentos(restaurante)
