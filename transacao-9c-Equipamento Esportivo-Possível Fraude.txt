@@ -1,0 +1,13 @@
+Recomendação: Acionar setor Anti-Fraude
+
+Justificativa: Dado o status de "Possível Fraude" e o parecer detalhado, é necessário uma investigação mais aprofundada pelo setor especializado.
+
+Ações sugeridas:
+1. Suspender temporariamente a transação.
+2. Iniciar análise detalhada do histórico de compras do cliente.
+3. Verificar padrões de gastos em estabelecimentos esportivos.
+4. Analisar a geolocalização da transação em relação ao endereço do titular.
+
+Classificação do tipo de fraude: Possível fraude de valor elevado em compra genérica.
+
+Observação: Caso a análise do setor Anti-Fraude não seja conclusiva, proceder com a notificação do cliente para confirmação da transação.

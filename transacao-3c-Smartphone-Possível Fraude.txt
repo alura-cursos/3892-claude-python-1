@@ -1,0 +1,13 @@
+Recomendação: Acionar setor Anti-Fraude
+
+Justificativa: Devido ao status de "Possível Fraude" e ao alto valor da transação para um único produto eletrônico, é necessário uma investigação mais aprofundada pelo setor especializado.
+
+Ações sugeridas:
+1. Iniciar protocolo de investigação de fraude.
+2. Contatar o titular do cartão para confirmar a autenticidade da transação.
+3. Analisar o histórico de compras do cliente para identificar padrões incomuns.
+4. Verificar a localização da transação em relação ao endereço registrado do cliente.
+
+Classificação do tipo de fraude potencial: Uso não autorizado de cartão de crédito
+
+Observação: Caso a investigação confirme a suspeita de fraude, considerar o bloqueio preventivo do cartão e notificar as autoridades competentes.
